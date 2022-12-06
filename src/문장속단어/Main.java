@@ -4,38 +4,40 @@ import java.util.Scanner;
 
 public class Main {
 	
-	public String Solution(String str) {
+	public String solution(String str) {
 		
 		String answer="";
-		
 		int max = Integer.MIN_VALUE,pos;
-		
+//		
 //		String[] s = str.split(" ");
 //		for(String x : s) {
-//			
 //			int len = x.length();
-//			if(len>max) {
+//			if(len >max) {
 //				max=len;
-//				answer=x;
+//				answer = x;
 //			}
-//		
-//			
 //		}
 		
-		while((pos = str.indexOf(' '))!=-1) {
+		while((pos=str.indexOf(" "))!=-1) {
 			
 			String tmp = str.substring(0,pos);
 			int len = tmp.length();
-			if(len > max) {
-				max=len;
-				answer=tmp;
+			if(len>max) {
+				max = len;
+				answer = tmp;
 			}
 			str = str.substring(pos+1);
+			if(str.length()>max) answer=str;
+			
 		}
-		if(str.length()>max) answer=str;
 		
 		
-		
+//		for(int i = 0; i<str.length(); i++) {
+//			
+//			if(str.indexOf(str.charAt(i)) == -1) {
+//				answer+=str.substring(str.charAt(i));
+//			}
+//		}
 		
 		return answer;
 	}
@@ -48,7 +50,9 @@ public class Main {
 		
 		String str = in.nextLine();
 		
-		System.out.println(T.Solution(str));
+		System.out.println(T.solution(str));
+		
+		
 	}
 
 }

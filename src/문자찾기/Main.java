@@ -4,21 +4,20 @@ import java.util.Scanner;
 
 public class Main {
 	
-	public int Solution(String str, char c) {
+	public int solution(String str, char c) {
 		
-		int num = 0;
+		int answer = 0;
 		
 		str = str.toUpperCase();
 		c = Character.toUpperCase(c);
 		
-		for(int i =0; i<str.length(); i++) {
+		for(int i = 0; i<str.length(); i++) {
 			
-			if(str.charAt(i) == c) num++;
-			
+			if(str.charAt(i) == c) answer++;
 		}
 		
 		
-		return num;
+		return answer;
 	}
 
 	public static void main(String[] args) {
@@ -30,7 +29,7 @@ public class Main {
 		String str = in.next();
 		char c = in.next().charAt(0);
 		
-		System.out.println(T.Solution(str, c));
+		System.out.println(T.solution(str, c));
 	}
 
 }

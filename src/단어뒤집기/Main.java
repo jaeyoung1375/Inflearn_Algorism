@@ -5,13 +5,18 @@ import java.util.Scanner;
 
 public class Main {
 	
-	public ArrayList<String> Solution(int n, String[] str) {
+	public ArrayList<String> solution(int num, String[] str) {
 		
-		ArrayList<String> answer = new ArrayList<>();
+		ArrayList<String> answer = new ArrayList<String>();
+		
+//		for(String x : str) {
+//			String tmp = new StringBuilder(x).reverse().toString();
+//			answer.add(tmp);
+//		}
 		
 		for(String x : str) {
 			char[] s = x.toCharArray();
-			int lt = 0, rt =x.length()-1;
+			int lt =0, rt = x.length()-1;
 			while(lt<rt) {
 				char tmp = s[lt];
 				s[lt] = s[rt];
@@ -23,40 +28,35 @@ public class Main {
 			answer.add(tmp);
 		}
 		
-//		for(String x : str) {
-//			String tmp = new StringBuilder(x).reverse().toString();
-//			answer.add(tmp);
-//		}
+		
 		
 		
 		return answer;
-		
-		
 	}
 
 	public static void main(String[] args) {
-		
+
 		Main T = new Main();
 		
 		Scanner in = new Scanner(System.in);
 		
-		int N = in.nextInt();
-		String[] str = new String[N];
+		int num = in.nextInt();
 		
-		for(int i = 0; i<N; i++) {
-			
+		String[] str = new String[num];
+		
+		for(int i = 0; i<num; i++) {
 			str[i] = in.next();
-			
 		}
 		
-		for(String x : T.Solution(N, str)) {
+		for(String x : T.solution(num, str)) {
 			System.out.println(x);
 		}
 		
+	
 		
 		
 		
-		
+
 		
 	}
 

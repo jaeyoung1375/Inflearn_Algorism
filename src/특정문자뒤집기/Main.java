@@ -1,39 +1,40 @@
 package 특정문자뒤집기;
 
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	
-	public String Solution(String str) {
-		
-		String answer;
-		
-		char[] c = str.toCharArray();
-		
-		int lt = 0, rt = str.length()-1;
+	String solution(String str) {
 		
 		
-		while(lt<rt) {
+		String answer="";
+		char[] s= str.toCharArray();
+		
+		int lt= 0;
+		int rt = str.length()-1;
+				
 			
-			if(!Character.isAlphabetic(c[lt])) lt++;
-			else if(!Character.isAlphabetic(c[rt])) rt--;
-			else {
-			
-				char tmp = c[lt];
-				c[lt] = c[rt];
-				c[rt] = tmp;
-				lt++;
-				rt--;
-			}
-			
-			
+			while(lt<rt) {
+				if(!Character.isAlphabetic(s[lt])) {
+					
+					lt++;				
+					
+				}else if(!Character.isAlphabetic(s[rt])) {
+					rt--;
+				}else {
+					
+					char tmp = s[lt];
+					s[lt] = s[rt];
+					s[rt] = tmp;
+					lt++;
+					rt--;
+				}				
 		}
-		answer = String.valueOf(c);
+			answer= String.valueOf(s);
+		
 		
 		return answer;
-		
-	
 	}
 
 	public static void main(String[] args) {
@@ -44,7 +45,8 @@ public class Main {
 		
 		String str = in.next();
 		
-		System.out.println(T.Solution(str));
+		
+		System.out.println(T.solution(str));
 	}
 
 }
